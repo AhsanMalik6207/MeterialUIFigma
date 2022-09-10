@@ -28,7 +28,7 @@ function Home() {
                 <Grid item xs={12} md={6}>
                         
            <Typography  sx={{
-                    fontSize:"8em",
+                    fontSize:{xs:"6em" , md:"8rem"},
                     fontFamily:"Metal Mania",
                     fontWeight:400,
                     color:"#FFFFFF",

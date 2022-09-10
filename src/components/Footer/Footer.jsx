@@ -84,7 +84,7 @@ export default function Footer() {
         <Typography sx={typo}>Team</Typography>
         <Typography sx={typo}>Partner</Typography>
       </Grid>
-      <Grid item xs={6} md={2} sx={ListContainer}>
+      <Grid item xs={6} md={2} sx={ListContainer} >
         <Typography sx={typo} variant="h6">
             Company
         </Typography>

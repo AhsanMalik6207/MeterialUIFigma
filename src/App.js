@@ -7,7 +7,7 @@ import Netsitem from './components/Netsitem/Netsitem'
 import Gam from './components/GAM/Gam'
 import RoadMap from './Roadmap';
 import Footer from './components/Footer/Footer';
-import Component from './components/NewComp/Component';
+// import Component from './components/NewComp/Component';
 function App() {
   return (
     <>
@@ -18,7 +18,7 @@ function App() {
             <Section3 />
             <Netsitem />
             <Gam />
-            <Component />
+            {/* <Component /> */}
             {/* <TheTan /> */}
             <RoadMap />
             <Footer />
