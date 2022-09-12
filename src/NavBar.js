@@ -13,13 +13,21 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Grid } from '@mui/material';
-
+import { Grid, useMediaQuery } from '@mui/material';
+import logo from './images/logo.png'
+import GROUP47 from './components/Netsitem/Group 47.png';
+import GROUP52 from './components/Netsitem/Group 52.png';
+import GROUP51 from './components/Netsitem/Group 51.png';
+import GROUP50 from './components/Netsitem/Group 50.png';
+import { height } from '@mui/system';
 const drawerWidth = 240;
 const navItems = ['Home', 'Game', 'NFTs'];
-const team = ['Team','RoadMap', 'Partner']
+const team = ['Team', 'RoadMap', 'Partner']
+
 
 function DrawerAppBar(props) {
+  const matches = useMediaQuery('(min-width:700px)')
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -28,8 +36,10 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' ,
-     }}>
+    <Box onClick={handleDrawerToggle} sx={{
+      textAlign: 'center',
+    }}>
+      {/* // marging-top & bottom */}
       <Typography variant="h6" sx={{ my: 2 }}>
         Mobile
       </Typography>
@@ -43,6 +53,14 @@ function DrawerAppBar(props) {
           </ListItem>
         ))}
       </List>
+      {/* <List>
+      {images.map(({ img }) => (
+                <div className="cards">
+                  <div>
+                    <img src={img} alt="" />
+                  </div>
+                </div>))}
+      </List> */}
       <List>
         {team.map((item) => (
           <ListItem key={item} disablePadding>
@@ -52,28 +70,23 @@ function DrawerAppBar(props) {
           </ListItem>
         ))}
       </List>
-
-
-
-      
     </Box>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex',
-  }}>
+    <Box sx={{ display: 'flex' }}>
       <AppBar component="nav" sx={{
-        backgroundColor:'cyan',
-        backgroundColor:'transparent',
-        height:100,
-        lineHeight:'90px',
-        position:"absolute",
+        backgroundColor: 'cyan',
+        backgroundColor: 'transparent',
+        height: 100,
+        lineHeight: '90px',
+        position: "absolute",
 
       }}>
         <Toolbar sx={{
-          justifyContent:'space-around',
+          justifyContent: 'space-around',
         }}>
 
           <IconButton
@@ -81,61 +94,60 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mt:3, mr: 2, display: { sm: 'none' } }}
+            sx={{ mt: 3, mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          
+
+          <Grid container spacing={1}>
+
             <Grid item xs={12} md={4} sx={{
             }}>
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{
-                color:'black',
-                color: '#fff' ,
-              padding:2,
-              fontWeight:600
-
-              
-              }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-              </Grid>
-
-<Grid item xs={12} md={4}  sx={{
-    // border:'1px solid black'
-}}>
-
-{/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
-          </Box> */}
-
-</Grid>
+              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                {navItems.map((item) => (
+                  <Button key={item} sx={{
+                    color: 'black',
+                    color: '#fff',
+                    padding: 2,
+                    fontWeight: 600
 
 
-              <Grid item xs={12} md={4} sx={{
-              }}>
-
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {team.map((item) => (
-                <Button key={item} sx={{ 
-                  color:'black',
-                  color: '#fff',
-                  padding:2,
-              fontWeight:600
-
-                   }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
+                  }}>
+                    {item}
+                  </Button>
+                ))}
+              </Box>
             </Grid>
+
+            <Grid item xs={12} md={4} sx={{display:'flex', alignItems:"center", justifyContent:"center" }}>
+              <Box sx={{ display: { xs: 'none', sm: 'block', } }}>
+                <div>
+                  <img src={logo} alt="" style={{  height:"6rem", width: "60rem", marginTop: "2rem" }} />
+                </div>
+              </Box>
+
+
+            </Grid>
+
+
+            <Grid item xs={12} md={4} sx={{
+            }}>
+
+              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                {team.map((item) => (
+                  <Button key={item} sx={{
+                    color: 'black',
+                    color: '#fff',
+                    padding: 2,
+                    fontWeight: 600
+
+                  }}>
+                    {item}
+                  </Button>
+                ))}
+              </Box>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
 
@@ -144,7 +156,7 @@ function DrawerAppBar(props) {
 
 
       <Box component="nav">
-        <Drawer 
+        <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -160,7 +172,7 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </Box>
-      
+
     </Box>
   );
 }

@@ -86,7 +86,6 @@ function Component() {
             color: "#FFFFFF",
           }}>$164.154.072
           </Typography>
-
           <Typography sx={{
             fontFamily: "Poppins",
             fontSize: "25px",

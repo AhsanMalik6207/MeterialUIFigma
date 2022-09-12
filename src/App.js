@@ -2,7 +2,9 @@ import Home from './components/Home/Home';
 import DrawerAppBar from './NavBar';
 import Players from './components/Players/Players'
 import Section3 from './components/Section/section'
+
 import Netsitem from './components/Netsitem/Netsitem'
+// import Netsitem from './Netsitem';
 // import TheTan from './TheTan';
 import Gam from './components/GAM/Gam'
 import RoadMap from './Roadmap';

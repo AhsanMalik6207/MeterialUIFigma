@@ -51,7 +51,6 @@ export default function TheTan() {
                     WebkitBackgroundClip:"text",
                     WebkitTextFillColor:"transparent",
                     textAlign:"center",
-               
                     textTransform:"uppercase",
                 }}>CORE TEAM</p>
 

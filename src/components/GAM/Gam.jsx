@@ -47,7 +47,7 @@ function Gam() {
           }}>WHAT’S THETAN GAM?</Typography>
           <Grid container justifyContent="center">
             <Grid item xs={12} md={3} mt={14}>
-              <Box sx={{display:"flex",flexDirection:"column",justifyContent: "flex-end",marginLeft:"8rem",marginTop:"3rem"}} >
+              <Box sx={{display:"flex",flexDirection:"column",justifyContent: "flex-end",marginLeft:!matches ? "0":"8rem",marginTop:"3rem"}} >
                 <Button sx={bt} >FREE TO EARN</Button>
                 <Button sx={bt} >MARKET</Button>
               </Box>
@@ -67,7 +67,7 @@ function Gam() {
             </Grid>
 
             <Grid item xs={12} md={3} mt={20}>
-              <Box sx={{display:"flex",justifyContent:"center", flexDirection:"column", marginLeft:"-12rem", alignItems:"center"}}>
+              <Box sx={{display:"flex",justifyContent:"center", flexDirection:"column", marginLeft:!matches ? "0":"-12rem", alignItems:"center"}}>
                 <Button sx={bt} >EVOLVE HEROES</Button>
                 <Button sx={bt} >STAKING</Button>
               </Box>
@@ -96,28 +96,29 @@ function Gam() {
             }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Typography>
 
           </Grid>
-          <Grid container>
-            <Grid item xs={6} md={2}>
-              <img src={box1} alt="" style={{ width: "200px" }} />
-            </Grid>
-            <Grid item xs={6} md={2}>
-              <img src={box1} alt="" style={{ width: "200px" }} />
-            </Grid>
-            <Grid item xs={6} md={2}>
-              <img item src={box1} alt="" style={{ width: "200px" }} />
-            </Grid>
-            <Grid item xs={6} md={2}>
-              <img src={box2} alt="" style={{ width: "200px" }} />
-            </Grid>
-            <Grid item xs={6} md={2}>
-              <img item src={box1} alt="" style={{ width: "200px" }} />
-            </Grid>
-            <Grid item xs={6} md={2}>
-              <img src={box1} alt="" style={{ width: "200px" }} />
-            </Grid>
-          </Grid>
         </Container>
+        <Box sx={{
+              justifyContent:"space-between",
+              textAlign:"center",
+              marginTop:"2rem"
+            }}>
+         
+              <img src={box1} alt="" style={{ width: "200px" }} />
+           
+              <img src={box1} alt="" style={{ width: "200px" }} />
+           
+              <img item src={box1} alt="" style={{ width: "200px" }} />
+           
+              <img src={box2} alt="" style={{ width: "200px" }} />
+            
+              <img item src={box1} alt="" style={{ width: "200px" }} />
+          
+            
+              <img src={box1} alt="" style={{ width: "200px" }} />
+            
+            </Box>
       </Box>
+
     </>
   )
 }

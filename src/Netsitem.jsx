@@ -1,21 +1,35 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { ListItem, Typography,List, useMediaQuery } from '@mui/material';
+import { useState } from 'react';
+import { ListItem, Typography,List, useMediaQuery,Button } from '@mui/material';
 import GROUP47 from './images/Group 47.png';
 import GROUP52 from './images/Group 52.png';
 import GROUP51 from './images/Group 51.png';
 import GROUP50 from './images/Group 50.png';
 import GROUP48 from './images/Group 48.png';
-import ICONS from './images/icons.png';
+import Pre from './images/pre.png';
+import Next from './images/next.png'
 import LINE from './images/LINE.png';
 import CONE from './images/CONE.png';
 import BORDERLINES from './images/BORDERLINES.png';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
 import BTNS from './images/BTN.png'
-import LINE2 from './images/LINE2.png'
+import LINE2 from './images/LINE2.png';
+
 export default function Netsitem() {
   const matches = useMediaQuery('(min-width:600px)')
-  console.log(matches)
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 2
+  };
   return (
     <Box pb={5} sx={{
       // backgroundColor: "#373030",
@@ -28,7 +42,7 @@ export default function Netsitem() {
     }}>
       <Grid container>
         <Grid xs={12} md={12} >
-      <p  style={{
+      <p style={{
                     fontSize:"4em",
                     fontFamily:"Metal Mania",
                     fontStyle: "Regular",
@@ -51,7 +65,7 @@ export default function Netsitem() {
                     }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Typography>
 
         </Grid>
-        <Grid xs={12} md={2}>
+         <Grid xs={12} md={2}>
         <img src={GROUP47} alt="" style={{width: !matches ? '60%' : "100%", paddingLeft: !matches ? "2rem": "1rem" }} />
         </Grid>
         <Grid xs={12} md={2} >
@@ -67,8 +81,35 @@ export default function Netsitem() {
         <img src={GROUP48} alt="" style={{width: !matches ? '60%' : "100%",paddingLeft: !matches ? "2rem": "5rem" }} />  
         </Grid>
         <Grid xs={12} md={12} >
-        <img src={ICONS} alt="" width={'8%'} style={{ float:"right", marginRight:"120px"}} />  
-        </Grid>
+        <img src={Next} alt="" width={'4%'} style={{ float:"right", marginRight:"122px"}}  /> 
+        <img src={Pre} alt="" width={'4%'} style={{ float:"right"}}  />
+        </Grid> 
+        <h1 style={{
+          color:"white"
+        }}>fasd fasdfasdfas dfasdf sdfas fasdfas dfa sdfas </h1>
+        <Slider {...settings}>
+      <div>
+        <div>
+      <img src={Pre} alt="" width={'100px'}   />
+        </div>
+      </div>
+      <div>
+      <div>
+      <img src={Pre} alt="" width={'100px'}  />
+        </div>
+      </div>
+      <div>
+      <div>
+      <img src={Pre} alt="" width={'4%'} style={{ float:"right"}}  />
+        </div>
+      </div>
+        </Slider>
+        {/* slider */}
+        {/* <div>
+      <div style={containerStyles}>
+        <ImageSlider slides={slides} />
+      </div>
+    </div> */}
 
         <Grid xs={12} md={12} >
 
@@ -91,7 +132,7 @@ export default function Netsitem() {
                         fontStyle:"normal",
                         color:"#FFFFFF",
                         textAlign:"center",
-                        padding:"0 7rem",
+                        // padding:"0 7rem",
                         fontWeight:200,
                         marginBottom:"1.5rem"
                     }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Typography>
@@ -100,11 +141,11 @@ export default function Netsitem() {
         <Grid xs={12} md={12}>
         <img src={LINE} alt="" width={'100%'} />
         </Grid>
-        <Grid xs={12} md={3}>
+        <Grid item xs={12} md={3}>
         <img src={CONE} alt="" width={'80%'} style={{marginTop:"-3rem"}}/>
         </Grid>
-        <Grid xs={12} md={2}>
-            <List sx={{color:"white"}}>
+        <Grid item xs={12} md={2}  >
+            <List sx={{color:"white", paddingLeft: !matches ? "134px": "0rem"}}>
               <ListItem>Special Events</ListItem>
               <ListItem>Battle Pass</ListItem>
               <ListItem>Ranking Rewards</ListItem>

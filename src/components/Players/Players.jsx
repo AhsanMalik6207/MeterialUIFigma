@@ -29,7 +29,6 @@ function Players() {
                                     fontWeight: 700,
 
 
-
                                 }}>$TEG Contract Address</Typography>
 
                                 <div style={{
